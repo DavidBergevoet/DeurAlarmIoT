@@ -25,7 +25,7 @@ void loop() {
      && millis() - trig > 7000){
     sing(s);
     ++s;
-    s %= 3;
+    s %= 4;
   } else if (n == TRIGGER && z != TRIGGER){
     z = LOW;
     trig = millis();

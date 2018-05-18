@@ -7,9 +7,9 @@
 #include "Notes.h"
 //Mario main theme melody
 
-int mario_main_size = 78;
+uint16_t mario_main_size = 78;
 
-static int mario_main_melody[] = {
+static uint16_t mario_main_melody[] = {
   NOTE_E7, NOTE_E7, 0, NOTE_E7,
   0, NOTE_C7, NOTE_E7, 0,
   NOTE_G7, 0, 0,  0,
@@ -36,7 +36,7 @@ static int mario_main_melody[] = {
   NOTE_D7, NOTE_B6, 0, 0
 };
 //Mario main them tempo
-static int mario_main_tempo[] = {
+static uint16_t mario_main_tempo[] = {
   12, 12, 12, 12,
   12, 12, 12, 12,
   12, 12, 12, 12,
@@ -65,8 +65,8 @@ static int mario_main_tempo[] = {
 
 //Underworld melody
 
-static int underworld_size = 56;
-static int underworld_melody[] = {
+static uint16_t underworld_size = 56;
+static uint16_t underworld_melody[] = {
   NOTE_C4, NOTE_C5, NOTE_A3, NOTE_A4,
   NOTE_AS3, NOTE_AS4, 0,
   0,
@@ -88,7 +88,7 @@ static int underworld_melody[] = {
   0, 0, 0
 };
 //Underwolrd tempo
-static int underworld_tempo[] = {
+static uint16_t underworld_tempo[] = {
   12, 12, 12, 12,
   12, 12, 6,
   3,
@@ -110,9 +110,9 @@ static int underworld_tempo[] = {
   3, 3, 3
 };
 
-static int adventure_time_size = 44;
+static uint16_t adventure_time_size = 44;
 
-static int adventure_time_melody[] = {
+static uint16_t adventure_time_melody[] = {
   NOTE_D5, 
   NOTE_G5, NOTE_G5, NOTE_G5, NOTE_G5, NOTE_FS5,
   NOTE_FS5, NOTE_E5, NOTE_D5, NOTE_E5, NOTE_D5, NOTE_D5,
@@ -125,7 +125,7 @@ static int adventure_time_melody[] = {
   NOTE_G5 //44
 };
 
-static int adventure_time_tempo[] = {  
+static uint16_t adventure_time_tempo[] = {  
   24,
   24, 12, 12, 12, 24,
   12, 24, 24, 24, 12, 24,
@@ -137,5 +137,112 @@ static int adventure_time_tempo[] = {
   8, 24, 12, 24, 24, 
   12 
 };
+static uint16_t pirates_carribean_size = 203;
 
+static uint16_t pirates_carribean_melody[] = {       //Note of the song, 0 is a rest/pulse
+   NOTE_E4, NOTE_G4, NOTE_A4, NOTE_A4, 0, 
+   NOTE_A4, NOTE_B4, NOTE_C5, NOTE_C5, 0, 
+   NOTE_C5, NOTE_D5, NOTE_B4, NOTE_B4, 0,
+   NOTE_A4, NOTE_G4, NOTE_A4, 0,
+   
+   NOTE_E4, NOTE_G4, NOTE_A4, NOTE_A4, 0, 
+   NOTE_A4, NOTE_B4, NOTE_C5, NOTE_C5, 0, 
+   NOTE_C5, NOTE_D5, NOTE_B4, NOTE_B4, 0,
+   NOTE_A4, NOTE_G4, NOTE_A4, 0,
+   
+   NOTE_E4, NOTE_G4, NOTE_A4, NOTE_A4, 0, 
+   NOTE_A4, NOTE_C5, NOTE_D5, NOTE_D5, 0, 
+   NOTE_D5, NOTE_E5, NOTE_F5, NOTE_F5, 0,
+   NOTE_E5, NOTE_D5, NOTE_E5, NOTE_A4, 0,
+   
+   NOTE_A4, NOTE_B4, NOTE_C5, NOTE_C5, 0, 
+   NOTE_D5, NOTE_E5, NOTE_A4, 0, 
+   NOTE_A4, NOTE_C5, NOTE_B4, NOTE_B4, 0,
+   NOTE_C5, NOTE_A4, NOTE_B4, 0,
 
+   NOTE_A4, NOTE_A4, 
+   //Repeat of first part
+   NOTE_A4, NOTE_B4, NOTE_C5, NOTE_C5, 0, 
+   NOTE_C5, NOTE_D5, NOTE_B4, NOTE_B4, 0,
+   NOTE_A4, NOTE_G4, NOTE_A4, 0,
+
+   NOTE_E4, NOTE_G4, NOTE_A4, NOTE_A4, 0, 
+   NOTE_A4, NOTE_B4, NOTE_C5, NOTE_C5, 0, 
+   NOTE_C5, NOTE_D5, NOTE_B4, NOTE_B4, 0,
+   NOTE_A4, NOTE_G4, NOTE_A4, 0,
+   
+   NOTE_E4, NOTE_G4, NOTE_A4, NOTE_A4, 0, 
+   NOTE_A4, NOTE_C5, NOTE_D5, NOTE_D5, 0, 
+   NOTE_D5, NOTE_E5, NOTE_F5, NOTE_F5, 0,
+   NOTE_E5, NOTE_D5, NOTE_E5, NOTE_A4, 0,
+   
+   NOTE_A4, NOTE_B4, NOTE_C5, NOTE_C5, 0, 
+   NOTE_D5, NOTE_E5, NOTE_A4, 0, 
+   NOTE_A4, NOTE_C5, NOTE_B4, NOTE_B4, 0,
+   NOTE_C5, NOTE_A4, NOTE_B4, 0,
+   //End of Repeat
+
+   NOTE_E5, 0, 0, NOTE_F5, 0, 0,
+   NOTE_E5, NOTE_E5, 0, NOTE_G5, 0, NOTE_E5, NOTE_D5, 0, 0,
+   NOTE_D5, 0, 0, NOTE_C5, 0, 0,
+   NOTE_B4, NOTE_C5, 0, NOTE_B4, 0, NOTE_A4,
+
+   NOTE_E5, 0, 0, NOTE_F5, 0, 0,
+   NOTE_E5, NOTE_E5, 0, NOTE_G5, 0, NOTE_E5, NOTE_D5, 0, 0,
+   NOTE_D5, 0, 0, NOTE_C5, 0, 0,
+   NOTE_B4, NOTE_C5, 0, NOTE_B4, 0, NOTE_A4
+};
+
+static uint16_t pirates_carribean_tempo[] = {         //duration of each note (in ms) Quarter Note is set to 12 ms
+  24, 24, 12, 24, 24, 
+  24, 24, 12, 24, 24,
+  24, 24, 12, 24, 24,
+  24, 24, 8, 24, 
+  
+  24, 24, 12, 24, 24, 
+  24, 24, 12, 24, 24,
+  24, 24, 12, 24, 24,
+  24, 24, 8, 24, 
+  
+  24, 24, 12, 24, 24, 
+  24, 24, 12, 24, 24,
+  24, 24, 12, 24, 24,
+  24, 24, 24, 12, 24,
+
+  24, 24, 12, 24, 24, 
+  12, 24, 12, 24, 
+  24, 24, 12, 24, 24,
+  24, 24, 8, 8,
+
+  12, 24,
+  //Rpeat of First Part
+  24, 24, 12, 24, 24,
+  24, 24, 12, 24, 24,
+  24, 24, 8, 24, 
+  
+  24, 24, 12, 24, 24, 
+  24, 24, 12, 24, 24,
+  24, 24, 12, 24, 24,
+  24, 24, 8, 24, 
+  
+  24, 24, 12, 24, 24, 
+  24, 24, 12, 24, 24,
+  24, 24, 12, 24, 24,
+  24, 24, 24, 12, 24,
+
+  24, 24, 12, 24, 24, 
+  12, 24, 12, 24, 
+  24, 24, 12, 24, 24,
+  24, 24, 8, 8,
+  //End of Repeat
+  
+  12, 24, 8, 12, 24, 8,
+  24, 24, 24, 24, 24, 24, 24, 24, 8,
+  12, 24, 8, 12, 24, 8,
+  24, 24, 24, 24, 24, 6,
+
+  12, 24, 8, 12, 24, 8,
+  24, 24, 24, 24, 24, 24, 24, 24, 8,
+  12, 24, 8, 12, 24, 8,
+  24, 24, 24, 24, 24, 6
+};
